@@ -40,7 +40,7 @@ class _DenseLayer(nn.Module):
         bottleneck_output = self.conv1(self.relu1(self.norm1(concated_features)))  # noqa: T484
         return bottleneck_output
 
-    # todo: rewrite when torchscript supports any
+    """
     def any_requires_grad(self, input):
         # type: (List[Tensor]) -> bool
         for tensor in input:
@@ -48,7 +48,7 @@ class _DenseLayer(nn.Module):
                 return True
         return False
 
-
+"""
     def call_checkpoint_bottleneck(self, input):
         # type: (List[Tensor]) -> Tensor
         def closure(*inputs):
