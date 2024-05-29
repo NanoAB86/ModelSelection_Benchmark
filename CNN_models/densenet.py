@@ -48,7 +48,7 @@ class _DenseLayer(nn.Module):
                 return True
         return False
 
-    @torch.jit.unused  # noqa: T484
+
     def call_checkpoint_bottleneck(self, input):
         # type: (List[Tensor]) -> Tensor
         def closure(*inputs):
